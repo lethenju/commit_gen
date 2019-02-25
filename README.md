@@ -68,8 +68,8 @@ Final message : [Doc] add argument explanation
 Is it ok? (y/n)
 y
 commiting..
-On branch master
-nothing to commit, working directory clean
+[master 72fc7ae] [Doc] add argument explanation
+ 1 file changed, 55 insertions(+), 16 deletions(-)
 done..
 exiting.
 ```
