@@ -7,7 +7,7 @@ if [[ $# -eq 1 ]]; then # One arg supplied :
     case $1 in 
     help)
         echo "Usage :"
-        echo "./gen_script [OPTION] [MESSAGE]"
+        echo "./commit_gen.sh [OPTION] [MESSAGE]"
         echo ""
         echo "Options available :"
         echo " D: Doc (Documentation only changes)"
