@@ -3,41 +3,74 @@
 # Julien LE THENO
 # (c) MIT License
 
-echo "Enter type of commit"
-echo " 1: Doc (Documentation only changes)"
-echo " 2: Feat (Feature implementation)"
-echo " 3: Fix (Fixes a bug)"
-echo " 4: Style (Formatting, white-spaces..)"
-echo " 5: Refactor (Changes that neither fixes a bug or adds a feature)"
-echo " 6: Perf (Performance improvement)"
-echo " 7: Test (Adding missing tests)"
-echo " 8: Chore (changes in build process or auxilliary tools) : "
-read type
-
+if [[ $# -eq 1 ]]; then # One arg supplied : 
+    case $1 in 
+    help)
+        echo "Usage :"
+        echo "./gen_script [OPTION] [MESSAGE]"
+        echo ""
+        echo "Options available :"
+        echo " D: Doc (Documentation only changes)"
+        echo " F: Feat (Feature implementation)"
+        echo " X: Fix (Fixes a bug)"
+        echo " S: Style (Formatting, white-spaces..)"
+        echo " R: Refactor (Changes that neither fixes a bug or adds a feature)"
+        echo " P: Perf (Performance improvement)"
+        echo " T: Test (Adding missing tests)"
+        echo " C: Chore (changes in build process or auxilliary tools) : "  
+        echo " help : Shows this help message"
+        echo " (default) : Use custom commit type"
+        exit
+        ;;
+    esac
+    type=$1
+    echo ""
+    echo "Enter a small commit message. Try to not repeat the type"
+    read message
+elif [ $# -eq 2 ]
+then # Two args supplied
+    type=$1
+    message=$2
+else
+    echo "Enter type of commit"
+    echo " D: Doc (Documentation only changes)"
+    echo " F: Feat (Feature implementation)"
+    echo " X: Fix (Fixes a bug)"
+    echo " S: Style (Formatting, white-spaces..)"
+    echo " R: Refactor (Changes that neither fixes a bug or adds a feature)"
+    echo " P: Perf (Performance improvement)"
+    echo " T: Test (Adding missing tests)"
+    echo " C: Chore (changes in build process or auxilliary tools) : "  
+    echo ""
+    read type
+    echo ""
+    echo "Enter a small commit message. Try to not repeat the type"
+    read message
+fi
 
 case $type in
-1)
+D)
     type="Doc"
     ;;
-2)
+F)
     type="Feat"
     ;;
-3)
+X)
     type="Fix"
     ;;
-4)
+S)
     type="Style"
     ;;
-5)
+R)
     type="Refactor"
     ;;
-6)
+P)
     type="Perf"
     ;;
-7)
+T)
     type="Test"
     ;;
-8)
+C)
     type="Chore"
     ;;
 *)
@@ -45,10 +78,9 @@ case $type in
     ;;
 esac
 
-echo "Enter a small commit message. Try to not repeat the type"
-read message
 message="[$type] $message"
 
+echo ""
 echo "Final message : $message"
 echo "Is it ok? (y/n)"
 read ok
