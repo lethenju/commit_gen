@@ -8,7 +8,7 @@ Help message :
 ```
 > ./commit_gen.sh help
 Usage :
-./gen_script [OPTION] [MESSAGE]
+./commit_gen.sh [OPTION] [MESSAGE]
 
 Options available :
  D: Doc (Documentation only changes)
