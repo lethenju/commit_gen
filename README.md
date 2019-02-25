@@ -4,6 +4,25 @@ Hi, this is a very simple script to automate good commit messages.
 
 ## Usage 
 
+Help message :
+```
+> ./commit_gen.sh help
+Usage :
+./gen_script [OPTION] [MESSAGE]
+
+Options available :
+ D: Doc (Documentation only changes)
+ F: Feat (Feature implementation)
+ X: Fix (Fixes a bug)
+ S: Style (Formatting, white-spaces..)
+ R: Refactor (Changes that neither fixes a bug or adds a feature)
+ P: Perf (Performance improvement)
+ T: Test (Adding missing tests)
+ C: Chore (changes in build process or auxilliary tools) : 
+ help : Shows this help message
+ (default) : Use custom commit type
+```
+
 ### Without arguments
 Simply execute the script in a already created git repository.
 It will automatically commit your modifications with the formatted commit message.
